@@ -1,0 +1,7 @@
+{
+    "loginMessage": {
+        "success": "Logged In Successfully",
+        "usernameError": "Your username is invalid!",
+        "passwordError": "Your password is invalid!"
+    }
+}
