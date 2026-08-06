@@ -31,6 +31,7 @@ for (const {username, password, expectedText} of testCases){
         const loginPage = new LoginPage(page);
         await loginPage.goto();
         await loginPage.login(username, password);
+        
         if (expectedText === loginData.loginMessage.success) {
             await expect(loginPage.successMessage).toHaveText(expectedText);
         } else {

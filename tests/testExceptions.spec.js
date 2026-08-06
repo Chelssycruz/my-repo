@@ -8,7 +8,6 @@ test.beforeEach(async ({ page }) => {
     await testExceptionsPage.goto()
 });
 
-
 test('When user opens URL, Then row 1 textbox is in view mode', async ({}) => {
     await expect(testExceptionsPage.row(1)).toBeVisible();
     await expect(testExceptionsPage.textbox(1)).toBeDisabled();
@@ -35,8 +34,6 @@ test('When user clicks Add, Then new row loads', async({}) => {
     await expect(testExceptionsPage.loading).toBeVisible({timeout: 10000});
     await expect(testExceptionsPage.loading).toBeHidden({timeout: 10000});
 })
-
-
 
 test.describe(`Row 2`, () => {
     test.beforeEach(async ({ page }) => {
