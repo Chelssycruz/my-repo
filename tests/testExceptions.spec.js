@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import { TestExceptionsPage } from '../src/pages/TestExceptionsPage';
 
 let testExceptionsPage;
-
 test.beforeEach(async ({ page }) => {
 	testExceptionsPage = new TestExceptionsPage( page );
     await testExceptionsPage.goto()
