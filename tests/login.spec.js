@@ -1,27 +1,27 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../src/pages/LoginPage';
-import userData from '../src/data/user-data.json' assert { type: 'json' }; 
+import credentials from '../config/staging.config' assert { type: 'javascript' }; 
 import loginData from '../src/data/login-data.json' assert { type: 'json' };
 
 const testCases = [ 
     { 
-        username: userData[0].username, 
-        password: userData[0].password, 
+        username: credentials.username, 
+        password: credentials.password, 
         expectedText: loginData.loginMessage.success },
     {
         username: '',
-        password: userData[0].password,
+        password: credentials.password,
         expectedText: loginData.loginMessage.usernameError },
     {
         username: 'wrong username',
-        password: userData[0].password, 
+        password: credentials.password, 
         expectedText: loginData.loginMessage.usernameError },
     {
-        username: userData[0].username,
+        username: credentials.username,
         password: '',
         expectedText: loginData.loginMessage.passwordError },
     {
-        username: userData[0].username,
+        username: credentials.username,
         password: 'wrong password',
         expectedText: loginData.loginMessage.passwordError }
 ];
