@@ -9,7 +9,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('https://practicetestautomation.com/practice-test-login/');
+    await this.page.goto('/practice-test-login/');
   }
 
   async login(username, password) {
