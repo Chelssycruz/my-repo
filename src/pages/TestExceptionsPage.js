@@ -11,9 +11,9 @@ export class TestExceptionsPage {
   };
 
 	async goto() {
-		await this.page.goto('/practice-test-exceptions/');
+		await this.page.goto(`/practice-test-exceptions/`);
 	};
-
+	
 	row(rowNumber) {
 		return this.page.locator(`#row${rowNumber}`);
 	};
