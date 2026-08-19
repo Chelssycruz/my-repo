@@ -28,7 +28,8 @@ const testCases = [
 ];
 
 for (const {username, password, expectedText} of testCases){
-    test(`When user inputs "${username}" and "${password}", Then login message should display correct text`, async ({page}) =>{
+    test(`When user inputs "${username}" and "${password}" then login message should display correct text`, 
+        { tag: ['@smoke', '@auth'] }, async ({page}) =>{
         const loginPage = new LoginPage(page);
         await loginPage.goto();
         await loginPage.login(username, password);
