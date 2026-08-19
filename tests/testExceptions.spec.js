@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { TestExceptionsPage } from '../src/pages/TestExceptionsPage';
 
 test.describe('testExceptions', 
-{ tag: '@smoke'}, () => {
+{ tag: '@exception'}, () => {
     let testExceptionsPage;
     test.beforeEach(async ({ page }) => {
         testExceptionsPage = new TestExceptionsPage( page );
