@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: Node 24
     - name: Install dependencies
       run: npm install
     - name: Install Playwright Browsers
@@ -36,6 +36,12 @@ jobs:
         name: smoke-report
         path: playwright-report/
         retention-days: 30
+    - uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: test-traces
+        path: test-results/
+        retention-days: 7
   exceptions:
     if: github.event_name == 'workflow_dispatch'
     timeout-minutes: 60
@@ -45,7 +51,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: Node 24
     - name: Install dependencies
       run: npm install
     - name: Install Playwright Browsers
@@ -69,7 +75,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: Node 24
     - name: Install dependencies
       run: npm install
     - name: Install Playwright Browsers

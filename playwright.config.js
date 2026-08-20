@@ -30,8 +30,9 @@ export default defineConfig({
     loginUsername: process.env.LOGIN_USERNAME,
     loginPassword: process.env.LOGIN_PASSWORD,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry'
-    
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'on-first-retry',
   },
   
 
